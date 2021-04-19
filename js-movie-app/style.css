@@ -2,18 +2,31 @@
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
+    scroll-behavior: smooth;
 }
 #navbar{
-    height: 80px;
+    height: 50px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background-color: rgb(21, 21, 73);
+    justify-content: space-between;
+    background-color: rgb(75, 3, 25);
     box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.479);
     position: fixed;
 }
+
+.menu{
+    color: rgb(153, 153, 153);
+    display: flex;
+}
+
+.menu div{
+    margin-right: 10px;
+    font-size: 15px;
+}
+
 .logo{
+    margin-left: 20px;
     font-size: 20px;
 }
 .logo a{
@@ -33,21 +46,27 @@
     width: 60%;
     padding: 10px;
     font-size: 20px;
-    border-radius: 10px;
-    border: 1px solid black;
+    border-radius: 30px;
     outline: none;
+    border: none;
+    padding-left: 30px;
 }
 
 #searchButton{
-    margin-left: 5px;
-    padding: 12px;
+    margin-left: -97px;
+    padding: 10px;
     font-size: 20px;
     color: white;
-    background-color: rgb(21, 21, 73); 
-    border-radius: 10px;
+    background-color: rgb(75, 3, 25); 
+    border-radius: 30px;
     outline: none;
     border: none;
     cursor: pointer;
+    width: 100px;
+}
+
+#searchButton:hover{
+    background-color: rgb(39, 4, 14); 
 }
 
 #hero{
@@ -55,32 +74,78 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(48, 4, 241, 0.425);
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.596);
     background-image: url(https://wallpaperaccess.com/full/31580.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: darken;
 }
 
-.title{
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    text-transform: capitalize;
+#hero h1,h2{
+    color: white;
+    margin-left: 10px;
 }
 
-.card{
- margin: 20px;
+#hero h1{
+    font-size: 40px;
+}
 
+#hero h2{
+    font-size: 30px;
+}
+
+
+
+.title{
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 .card img{
-   height: 500px;
-   width: 500px;
+    transition: ease-in-out 0.25s;
+   height: 250px;
+   width: 150px;
    cursor: pointer;
+   margin: 10px;
+   border-radius: 10px;
+}
+
+
+
+.cardInside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+.circle{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(75, 3, 25);
+    border: 5px solid rgb(44, 15, 8);
+    border-radius: 50%;
+    margin-top: -50px;
+}
+
+.cardTitle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
 }
 
 .cards{
@@ -88,3 +153,123 @@
     overflow-x: auto;
     width: 100%;
 }
+
+.pCards{
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+}
+
+#popular , #topRated, #next, #search{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.content{
+    transition: ease-in-out 1s;
+    height: 500px;
+    width: 100%;
+    background-color: brown;
+    z-index: 3;
+}
+
+
+#view{
+    background: rgba(0, 0, 0, 0.801);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    color: white;
+}
+
+.image-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+}
+
+.image-holder img{
+    margin-top: 50px;
+    height: 90vh;
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.overview{
+    height: 100%;
+    width: 65%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#description{
+    width: 600px;
+    letter-spacing: 1px;
+}
+
+.oTitle{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.play{
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: rgb(75, 3, 25);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 975px) {
+    .card img {
+      width: 100px;
+      height: 150px;
+    }
+    #popular , #topRated, #next, #search{
+        margin: 0;
+    }
+    #searchText, #searchButton{
+        font-size: 12px;
+    }
+    .circle{
+        margin-top: -30px;
+        height: 30px;
+        width: 30px;
+        font-size: 14px;
+    }
+    #hero h2{
+        padding: 10px;
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    .image-holder{
+        display: none;
+    }
+    .overview{
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 100vh;
+        width: 100%;
+    }
+
+    #description{
+        width: 100%;
+    }
+
+  }
